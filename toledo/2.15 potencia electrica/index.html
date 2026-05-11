@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Potencia Eléctrica</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0f2027,#2c5364);
+}
+
+.card{
+width:350px;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.logo{
+width:120px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+}
+
+button{
+background:#2c5364;
+color:white;
+font-weight:bold;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#2c5364;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/electricidad.png" class="logo">
+
+<h1>Potencia Eléctrica</h1>
+
+<input type="number" id="r" placeholder="Resistencia">
+
+<input type="number" id="i" placeholder="Corriente">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let r =
+parseFloat(document.getElementById("r").value);
+
+let i =
+parseFloat(document.getElementById("i").value);
+
+let v = r * i;
+
+let p = v * i;
+
+document.getElementById("resultado").innerHTML =
+"P = " + p.toFixed(2) + " Watts";
+
+}
+
+</script>
+
+</body>
+</html>

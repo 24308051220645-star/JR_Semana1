@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Viaje Monterrey</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#4568dc,#b06ab3);
+}
+
+.card{
+width:360px;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.logo{
+width:120px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+button{
+background:#4568dc;
+color:white;
+font-weight:bold;
+}
+
+#resultado{
+margin-top:20px;
+font-size:20px;
+color:#4568dc;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/hotel.png" class="logo">
+
+<h1>Viaje a Monterrey</h1>
+
+<input type="number" id="dias" placeholder="Días">
+
+<input type="number" id="hotel" placeholder="Hotel por día">
+
+<input type="number" id="comida" placeholder="Comida por día">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let dias =
+parseInt(document.getElementById("dias").value);
+
+let hotel =
+parseFloat(document.getElementById("hotel").value);
+
+let comida =
+parseFloat(document.getElementById("comida").value);
+
+let otros = 100 * dias;
+
+let totalHotel = hotel * dias;
+
+let totalComida = comida * dias;
+
+let total =
+otros + totalHotel + totalComida;
+
+document.getElementById("resultado").innerHTML =
+
+"Hotel: $" + totalHotel.toFixed(2) +
+"<br>Comida: $" + totalComida.toFixed(2) +
+"<br>Otros: $" + otros.toFixed(2) +
+"<br><br>Total: $" + total.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Promedio Alumno</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#373b44,#4286f4);
+}
+
+.card{
+width:350px;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.logo{
+width:120px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+}
+
+button{
+background:#4286f4;
+color:white;
+font-weight:bold;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#4286f4;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/alumno.png" class="logo">
+
+<h1>Promedio Alumno</h1>
+
+<input type="number" id="e1" placeholder="Examen 1">
+
+<input type="number" id="e2" placeholder="Examen 2">
+
+<input type="number" id="e3" placeholder="Examen 3">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let e1 =
+parseFloat(document.getElementById("e1").value);
+
+let e2 =
+parseFloat(document.getElementById("e2").value);
+
+let e3 =
+parseFloat(document.getElementById("e3").value);
+
+let promedio =
+(e1*0.25)+(e2*0.25)+(e3*0.50);
+
+document.getElementById("resultado").innerHTML =
+promedio.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

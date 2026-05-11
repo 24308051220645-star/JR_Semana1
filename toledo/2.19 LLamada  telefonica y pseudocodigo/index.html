@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Llamada Telefónica</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+background:linear-gradient(135deg,#614385,#516395);
+color:white;
+}
+
+.contenedor{
+width:90%;
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+margin-top:20px;
+text-align:center;
+}
+
+.logo{
+width:120px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+button{
+background:#00e5ff;
+color:black;
+font-weight:bold;
+cursor:pointer;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#00ff9d;
+}
+
+pre{
+text-align:left;
+background:black;
+padding:15px;
+border-radius:10px;
+overflow:auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<div class="card">
+
+<img src="images/telefono.png" class="logo">
+
+<h1>Llamada Telefónica</h1>
+
+<input type="number" id="minutos" placeholder="Minutos">
+
+<input type="number" id="precio" placeholder="Costo por minuto">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<div class="card">
+
+<h2>Pseudocódigo</h2>
+
+<pre>
+Inicio
+
+Leer minutos
+Leer costo
+
+total = minutos * costo
+
+Escribir total
+
+Fin
+</pre>
+
+</div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let minutos =
+parseFloat(document.getElementById("minutos").value);
+
+let precio =
+parseFloat(document.getElementById("precio").value);
+
+let total = minutos * precio;
+
+document.getElementById("resultado").innerHTML =
+"$" + total.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

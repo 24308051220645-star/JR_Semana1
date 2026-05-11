@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Tiempo Bicicleta</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#11998e,#38ef7d);
+}
+
+.card{
+width:350px;
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+text-align:center;
+color:white;
+}
+
+.logo{
+width:120px;
+margin-bottom:10px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+}
+
+button{
+background:#00e5ff;
+font-weight:bold;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#ffffff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/bicicleta.png" class="logo">
+
+<h1>Tiempo Bicicleta</h1>
+
+<input type="number" id="distancia" placeholder="Distancia">
+
+<input type="number" id="velocidad" placeholder="Velocidad">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let distancia =
+parseFloat(document.getElementById("distancia").value);
+
+let velocidad =
+parseFloat(document.getElementById("velocidad").value);
+
+let tiempo = distancia / velocidad;
+
+document.getElementById("resultado").innerHTML =
+tiempo.toFixed(2) + " horas";
+
+}
+
+</script>
+
+</body>
+</html>

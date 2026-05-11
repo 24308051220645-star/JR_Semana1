@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Estacionamiento</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#232526,#414345);
+}
+
+.card{
+width:350px;
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+text-align:center;
+color:white;
+}
+
+.logo{
+width:120px;
+margin-bottom:10px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+}
+
+button{
+background:#00e5ff;
+font-weight:bold;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#00ff9d;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/parking.png" class="logo">
+
+<h1>Estacionamiento</h1>
+
+<input type="number" id="horas" placeholder="Horas">
+
+<input type="number" id="precio" placeholder="Costo por hora">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let horas =
+Math.ceil(parseFloat(document.getElementById("horas").value));
+
+let precio =
+parseFloat(document.getElementById("precio").value);
+
+let total = horas * precio;
+
+document.getElementById("resultado").innerHTML =
+"$" + total.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

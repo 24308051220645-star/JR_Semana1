@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Área del Triángulo</title>
+
+<style>
+
+body{
+
+margin:0;
+padding:0;
+
+font-family:Arial, Helvetica, sans-serif;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#141e30,#243b55);
+
+}
+
+.card{
+
+width:350px;
+
+background:rgba(255,255,255,0.1);
+
+backdrop-filter:blur(10px);
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.5);
+
+text-align:center;
+
+color:white;
+
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.logo{
+
+width:120px;
+height:120px;
+
+object-fit:contain;
+
+margin-bottom:10px;
+
+}
+
+h1{
+
+color:#00e5ff;
+
+}
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin-top:10px;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+outline:none;
+
+box-sizing:border-box;
+
+}
+
+button{
+
+width:100%;
+
+padding:12px;
+
+margin-top:15px;
+
+border:none;
+
+border-radius:10px;
+
+background:#00e5ff;
+
+color:black;
+
+font-size:17px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+button:hover{
+
+background:white;
+
+transform:scale(1.03);
+
+}
+
+#resultado{
+
+margin-top:20px;
+
+font-size:25px;
+
+color:#00ff9d;
+
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/triangulo.png" class="logo">
+
+<h1>Área del Triángulo</h1>
+
+<input type="number" id="base" placeholder="Base">
+
+<input type="number" id="altura" placeholder="Altura">
+
+<button onclick="calcular()">
+Calcular Área
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let base =
+parseFloat(document.getElementById("base").value);
+
+let altura =
+parseFloat(document.getElementById("altura").value);
+
+let area = (base * altura) / 2;
+
+document.getElementById("resultado").innerHTML =
+"Área: " + area.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

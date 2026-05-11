@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Área Cuadrado</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#fc4a1a,#f7b733);
+}
+
+.card{
+width:350px;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.logo{
+width:120px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+}
+
+button{
+background:#fc4a1a;
+color:white;
+font-weight:bold;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#fc4a1a;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/cuadrado.png" class="logo">
+
+<h1>Área Cuadrado</h1>
+
+<input type="number" id="lado" placeholder="Lado">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let lado =
+parseFloat(document.getElementById("lado").value);
+
+let area = lado * lado;
+
+document.getElementById("resultado").innerHTML =
+area.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

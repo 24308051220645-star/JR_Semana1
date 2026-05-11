@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Llamada Telefónica</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#3a1c71,#d76d77,#ffaf7b);
+}
+
+.card{
+width:350px;
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+text-align:center;
+color:white;
+backdrop-filter:blur(10px);
+}
+
+.logo{
+width:120px;
+margin-bottom:10px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+button{
+background:#00e5ff;
+font-weight:bold;
+cursor:pointer;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#00ff9d;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/telefono.png" class="logo">
+
+<h1>Llamada Telefónica</h1>
+
+<input type="number" id="minutos" placeholder="Minutos">
+
+<input type="number" id="precio" placeholder="Costo por minuto">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let minutos =
+parseFloat(document.getElementById("minutos").value);
+
+let precio =
+parseFloat(document.getElementById("precio").value);
+
+let total = minutos * precio;
+
+document.getElementById("resultado").innerHTML =
+"$" + total.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

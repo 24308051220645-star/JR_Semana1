@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Hotel Cama Arena</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#232526,#414345);
+}
+
+.card{
+width:350px;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.logo{
+width:120px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+button{
+background:#232526;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#232526;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/hotel.png" class="logo">
+
+<h1>Hotel Cama Arena</h1>
+
+<input type="number" id="dias" placeholder="Días hospedado">
+
+<input type="number" id="precio" placeholder="Costo por día">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let dias =
+parseInt(document.getElementById("dias").value);
+
+let precio =
+parseFloat(document.getElementById("precio").value);
+
+let total = dias * precio;
+
+document.getElementById("resultado").innerHTML =
+"$" + total.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

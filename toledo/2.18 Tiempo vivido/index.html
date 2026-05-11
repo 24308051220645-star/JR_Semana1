@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Tiempo Vivido</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#16222a,#3a6073);
+}
+
+.card{
+width:360px;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.logo{
+width:120px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+button{
+background:#3a6073;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+#resultado{
+margin-top:20px;
+font-size:20px;
+color:#3a6073;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/tiempo.png" class="logo">
+
+<h1>Tiempo Vivido</h1>
+
+<input type="number" id="edad" placeholder="Edad">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let edad =
+parseInt(document.getElementById("edad").value);
+
+let meses = edad * 12;
+
+let semanas = edad * 52;
+
+let dias = edad * 365;
+
+let horas = dias * 24;
+
+document.getElementById("resultado").innerHTML =
+
+meses + " meses<br>" +
+semanas + " semanas<br>" +
+dias + " días<br>" +
+horas + " horas";
+
+}
+
+</script>
+
+</body>
+</html>

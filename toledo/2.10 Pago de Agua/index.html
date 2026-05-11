@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Pago de Agua</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#2193b0,#6dd5ed);
+}
+
+.card{
+width:350px;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.logo{
+width:120px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+border:none;
+box-sizing:border-box;
+}
+
+button{
+background:#2193b0;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#2193b0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="https://es.wikipedia.org/wiki/Comisi%C3%B3n_Nacional_del_Agua" class="logo">
+
+<h1>Pago de Agua</h1>
+
+<input type="number" id="metros" placeholder="Metros cúbicos">
+
+<input type="number" id="precio" placeholder="Costo por m³">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let metros =
+parseFloat(document.getElementById("metros").value);
+
+let precio =
+parseFloat(document.getElementById("precio").value);
+
+let total = metros * precio;
+
+document.getElementById("resultado").innerHTML =
+"$" + total.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

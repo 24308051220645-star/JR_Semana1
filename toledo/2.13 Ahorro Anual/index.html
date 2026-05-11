@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Ahorro Anual</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#11998e,#38ef7d);
+}
+
+.card{
+width:350px;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.logo{
+width:120px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+}
+
+button{
+background:#11998e;
+color:white;
+font-weight:bold;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#11998e;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/ahorro.png" class="logo">
+
+<h1>Ahorro Anual</h1>
+
+<input type="number" id="sueldo" placeholder="Sueldo semanal">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let sueldo =
+parseFloat(document.getElementById("sueldo").value);
+
+let ahorro = sueldo * 0.15 * 4 * 12;
+
+document.getElementById("resultado").innerHTML =
+"$" + ahorro.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Pinturas</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#42275a,#734b6d);
+}
+
+.card{
+width:350px;
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+text-align:center;
+color:white;
+}
+
+.logo{
+width:120px;
+margin-bottom:10px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+}
+
+button{
+background:#00e5ff;
+font-weight:bold;
+}
+
+#resultado{
+margin-top:20px;
+font-size:24px;
+color:#00ff9d;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/pintura.png" class="logo">
+
+<h1>Pinturas</h1>
+
+<input type="number" id="metros" placeholder="Metros cuadrados">
+
+<input type="number" id="precio" placeholder="Costo por m²">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let metros =
+parseFloat(document.getElementById("metros").value);
+
+let precio =
+parseFloat(document.getElementById("precio").value);
+
+let total = metros * precio;
+
+document.getElementById("resultado").innerHTML =
+"$" + total.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>

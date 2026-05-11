@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Descuento e IVA</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#8e2de2,#4a00e0);
+}
+
+.card{
+width:350px;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.logo{
+width:120px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+button{
+background:#8e2de2;
+color:white;
+font-weight:bold;
+}
+
+#resultado{
+margin-top:20px;
+font-size:22px;
+color:#4a00e0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<img src="images/descuento.png" class="logo">
+
+<h1>Descuento + IVA</h1>
+
+<input type="number" id="precio" placeholder="Precio">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let precio =
+parseFloat(document.getElementById("precio").value);
+
+let descuento = precio * 0.20;
+
+let subtotal = precio - descuento;
+
+let iva = subtotal * 0.15;
+
+let total = subtotal + iva;
+
+document.getElementById("resultado").innerHTML =
+"Con descuento: $" + subtotal.toFixed(2) +
+"<br>Total final: $" + total.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>
